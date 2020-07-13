@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Llinwey_meatshield-frontend&metric=alert_status)](https://sonarcloud.io/dashboard?id=Llinwey_meatshield-frontend)
+
 # MeatshieldFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
