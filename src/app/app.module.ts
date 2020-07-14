@@ -6,6 +6,9 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CombatViewComponent} from './combat-view/combat-view.component';
 import {MatTableModule} from "@angular/material/table";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -15,8 +18,11 @@ import {MatTableModule} from "@angular/material/table";
   imports: [
     BrowserModule,
     MatTableModule,
+    MatFormFieldModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
 
   <ng-container matColumnDef="initiative">
-    <th mat-header-cell *matHeaderCellDef scope="col"> No.</th>
+    <th mat-header-cell *matHeaderCellDef scope="col"> Initiative</th>
     <td mat-cell *matCellDef="let element"> {{element.initiative}} </td>
   </ng-container>
 
@@ -16,11 +16,32 @@
   </ng-container>
 
   <ng-container matColumnDef="health">
-    <th mat-header-cell *matHeaderCellDef scope="col"> Health</th>
+    <th mat-header-cell *matHeaderCellDef scope="col"> Hit points</th>
     <td mat-cell *matCellDef="let element" scope="row"> {{element.health}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<div>
+  <mat-form-field appearance="standard">
+    <mat-label>Initiative</mat-label>
+    <input matInput placeholder="Initiative" type="number">
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <mat-label>Armor Rating</mat-label>
+    <input matInput placeholder="Armor Rating" type="number">
+    <span matSuffix>AC</span>
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <mat-label>Hit points</mat-label>
+    <input matInput placeholder="Hit points" type="number">
+    <span matSuffix>HP</span>
+  </mat-form-field>
+</div>
 
