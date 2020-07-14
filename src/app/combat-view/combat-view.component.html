@@ -1,23 +1,23 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
-
+  <caption>Combatants</caption>
   <ng-container matColumnDef="initiative">
-    <th mat-header-cell *matHeaderCellDef scope="col"> Initiative</th>
+    <th mat-header-cell *matHeaderCellDef id="initiative"> Initiative</th>
     <td mat-cell *matCellDef="let element"> {{element.initiative}} </td>
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef scope="col"> Name</th>
-    <td mat-cell *matCellDef="let element" scope="row"> {{element.name}} </td>
+    <th mat-header-cell *matHeaderCellDef id="name"> Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
 
   <ng-container matColumnDef="armor">
-    <th mat-header-cell *matHeaderCellDef scope="col"> AC</th>
-    <td mat-cell *matCellDef="let element" scope="row"> {{element.armor}} </td>
+    <th mat-header-cell *matHeaderCellDef id="armor"> AC</th>
+    <td mat-cell *matCellDef="let element"> {{element.armor}} </td>
   </ng-container>
 
   <ng-container matColumnDef="health">
-    <th mat-header-cell *matHeaderCellDef scope="col"> Hit points</th>
-    <td mat-cell *matCellDef="let element" scope="row"> {{element.health}} </td>
+    <th mat-header-cell *matHeaderCellDef id="health"> Hit points</th>
+    <td mat-cell *matCellDef="let element"> {{element.health}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
