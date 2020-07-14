@@ -26,22 +26,27 @@
 
 <div>
   <mat-form-field appearance="standard">
+    <!-- TODO furán viselkedik, majd meg kell vizsgálni, miért -->
     <mat-label>Initiative</mat-label>
-    <input matInput placeholder="Initiative" type="number">
+    <input matInput placeholder="Initiative" type="number" [formControl]="initiative" required>
+    <mat-error *ngIf="initiative.invalid">Enter a valid initiative!</mat-error>
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>Name</mat-label>
-    <input matInput placeholder="Name">
+    <input matInput placeholder="Name" [formControl]="name" maxlength="100" required>
+    <mat-error *ngIf="name.invalid">Enter a valid name!</mat-error>
   </mat-form-field>
   <mat-form-field appearance="standard">
-    <mat-label>Armor Rating</mat-label>
-    <input matInput placeholder="Armor Rating" type="number">
+    <mat-label>Armor Class</mat-label>
+    <input matInput placeholder="Armor Class" type="number" [formControl]="armor" required>
     <span matSuffix>AC</span>
+    <mat-error *ngIf="armor.invalid">Enter a valid AC!</mat-error>
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>Hit points</mat-label>
-    <input matInput placeholder="Hit points" type="number">
+    <input matInput placeholder="Hit points" type="number" [formControl]="health" required>
     <span matSuffix>HP</span>
+    <mat-error *ngIf="health.invalid">Enter a valid HP!</mat-error>
   </mat-form-field>
 </div>
 
