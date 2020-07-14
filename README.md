@@ -1,4 +1,4 @@
-![Node.js CI](https://github.com/Llinwey/meatshield-frontend/workflows/Node.js%20CI/badge.svg)[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Llinwey_meatshield-frontend&metric=alert_status)](https://sonarcloud.io/dashboard?id=Llinwey_meatshield-frontend)
+![Node.js CI](https://github.com/Llinwey/meatshield-frontend/workflows/Node.js%20CI/badge.svg) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Llinwey_meatshield-frontend&metric=alert_status)](https://sonarcloud.io/dashboard?id=Llinwey_meatshield-frontend)
 
 # MeatshieldFrontend
 
