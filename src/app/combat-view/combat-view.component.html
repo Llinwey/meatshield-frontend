@@ -26,27 +26,29 @@
 
 <div>
   <mat-form-field appearance="standard">
-    <!-- TODO furán viselkedik, majd meg kell vizsgálni, miért -->
     <mat-label>Initiative</mat-label>
-    <input matInput placeholder="Initiative" type="number" [formControl]="initiative" required>
+    <input matInput type="number" [formControl]="initiative" required>
     <mat-error *ngIf="initiative.invalid">Enter a valid initiative!</mat-error>
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>Name</mat-label>
-    <input matInput placeholder="Name" [formControl]="name" maxlength="100" required>
+    <input matInput [formControl]="name" maxlength="100" required>
     <mat-error *ngIf="name.invalid">Enter a valid name!</mat-error>
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>Armor Class</mat-label>
-    <input matInput placeholder="Armor Class" type="number" [formControl]="armor" required>
+    <input matInput id="armorField" type="number" [formControl]="armor" class="right-align" required>
     <span matSuffix>AC</span>
     <mat-error *ngIf="armor.invalid">Enter a valid AC!</mat-error>
   </mat-form-field>
   <mat-form-field appearance="standard">
     <mat-label>Hit points</mat-label>
-    <input matInput placeholder="Hit points" type="number" [formControl]="health" required>
+    <input matInput id="healthField" type="number" [formControl]="health" class="right-align" required>
     <span matSuffix>HP</span>
     <mat-error *ngIf="health.invalid">Enter a valid HP!</mat-error>
   </mat-form-field>
+  <button mat-icon-button color="primary" aria-label="Save">
+    <mat-icon>add_circle</mat-icon>
+  </button>
 </div>
 
