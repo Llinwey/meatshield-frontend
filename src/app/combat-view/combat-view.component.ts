@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 export interface Combatant {
   name: string;
@@ -27,29 +27,48 @@ const DATA: Combatant[] = [
 })
 export class CombatViewComponent implements OnInit {
 
-  options: FormGroup;
-  name;
-  initiative;
-  armor;
-  health;
+  form: FormGroup;
   displayedColumns: string[] = ['initiative', 'name', 'armor', 'health'];
   dataSource: MatTableDataSource<Combatant>;
 
   constructor(fb: FormBuilder) {
-    this.options = fb.group({
-      name: this.name,
-      initiative: this.initiative,
-      armor: this.armor,
-      health: this.health,
+    this.form = fb.group({
+      'name': [undefined, [Validators.minLength(2), Validators.maxLength(100), Validators.required]],
+      'initiative': [undefined, [Validators.min(1), Validators.required]],
+      'armor': [undefined, [Validators.min(10), Validators.required]],
+      'health': [undefined, [Validators.min(1), Validators.required]],
     });
   }
 
   ngOnInit() {
-    this.name = new FormControl("",
-      [Validators.minLength(3), Validators.maxLength(100), Validators.required]);
-    this.initiative = new FormControl(undefined, [Validators.min(1), Validators.required]);
-    this.armor = new FormControl(undefined, [Validators.min(10), Validators.required]);
-    this.health = new FormControl(undefined, [Validators.min(1), Validators.required]);
+    this.redrawTable();
+  }
+
+  addCombatant() {
+    if (this.form != undefined && !this.form.invalid) {
+      DATA.push(this.form.value);
+      this.redrawTable();
+      this.form.reset();
+    }
+  }
+
+  get initiative() {
+    return this.form.get('initiative')
+  }
+
+  get name() {
+    return this.form.get('name')
+  }
+
+  get armor() {
+    return this.form.get('armor')
+  }
+
+  get health() {
+    return this.form.get('health')
+  }
+
+  private redrawTable() {
     DATA.sort((a: Combatant, b: Combatant) => {
       if (a.initiative > b.initiative) {
         return -1;

@@ -24,7 +24,7 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<div>
+<form [formGroup]="form">
   <mat-form-field appearance="standard">
     <mat-label>Initiative</mat-label>
     <input matInput type="number" [formControl]="initiative" required>
@@ -47,8 +47,8 @@
     <span matSuffix>HP</span>
     <mat-error *ngIf="health.invalid">Enter a valid HP!</mat-error>
   </mat-form-field>
-  <button mat-icon-button color="primary" aria-label="Save">
+  <button mat-icon-button color="primary" aria-label="Save" [disabled]="form.invalid" (click)="addCombatant()">
     <mat-icon>add_circle</mat-icon>
   </button>
-</div>
+</form>
 
