@@ -4,18 +4,22 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {CombatViewComponent} from './combat-view/combat-view.component';
+import {CombatViewComponent} from './combat/combat-view/combat-view.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import {AddCombatantComponent} from './combat/add-combatant/add-combatant.component';
+import {MatDividerModule} from "@angular/material/divider";
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CombatViewComponent
+    CombatViewComponent,
+    AddCombatantComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,9 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserAnimationsModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
