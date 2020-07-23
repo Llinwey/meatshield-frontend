@@ -14,6 +14,9 @@ export class CombatViewComponent implements OnInit {
 
   displayedColumns: string[] = ['initiative', 'name', 'armor', 'health'];
   dataSource: MatTableDataSource<Combatant>;
+  private activeCombatant: Combatant;
+  private activeIndex = 0;
+  private highestIndex;
 
   constructor(private service: CombatantService, public dialog: MatDialog) {
   }
@@ -31,9 +34,30 @@ export class CombatViewComponent implements OnInit {
     })
   }
 
+  startCombat() {
+    this.activeCombatant = this.dataSource.filteredData[this.activeIndex];
+  }
+
+  nextCombatant() {
+    if (this.activeIndex < this.highestIndex) {
+      this.activeIndex++;
+    } else {
+      this.activeIndex = 0;
+    }
+    this.activeCombatant = this.dataSource.filteredData[this.activeIndex];
+  }
+
+  endCombat() {
+    this.activeIndex = 0;
+    this.activeCombatant = null;
+  }
+
   private redrawTable() {
     this.service.getCombatants().subscribe(
-      combatants => this.dataSource = new MatTableDataSource<Combatant>(combatants)
+      combatants => {
+        this.highestIndex = combatants.length - 1;
+        this.dataSource = new MatTableDataSource<Combatant>(combatants);
+      }
     );
   }
 }

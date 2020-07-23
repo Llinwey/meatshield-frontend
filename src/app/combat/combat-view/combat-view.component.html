@@ -21,9 +21,12 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.active]="row === activeCombatant"></tr>
 </table>
 
 <mat-divider></mat-divider>
 
 <button mat-button aria-label="Add Combatant" (click)="showForm()">Add Combatant</button>
+<button *ngIf="!activeCombatant" mat-button aria-label="Start Combat" (click)="startCombat()">Start Combat</button>
+<button *ngIf="activeCombatant" mat-button aria-label="Next Combatant" (click)="nextCombatant()">Next Combatant</button>
+<button *ngIf="activeCombatant" mat-button aria-label="End Combat" (click)="endCombat()">End Combat</button>
