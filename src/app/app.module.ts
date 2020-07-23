@@ -14,12 +14,17 @@ import {MatButtonModule} from "@angular/material/button";
 import {AddCombatantComponent} from './combat/add-combatant/add-combatant.component';
 import {MatDividerModule} from "@angular/material/divider";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {HttpClientModule} from "@angular/common/http";
+import {LibraryComponent} from './library/library.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CombatViewComponent,
-    AddCombatantComponent
+    AddCombatantComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatInputModule,
     MatButtonModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,9 @@
-<app-combat-view></app-combat-view>
+<mat-toolbar color="primary" role="heading">
+  <button mat-icon-button aria-label="Combat View" matTooltip="Combat View" routerLink="../combat">
+    <mat-icon svgIcon="battle"></mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Library" matTooltip="Library" routerLink="../library">
+    <mat-icon>book</mat-icon>
+  </button>
+</mat-toolbar>
+<router-outlet></router-outlet>
