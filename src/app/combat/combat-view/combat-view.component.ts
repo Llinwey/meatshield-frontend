@@ -14,7 +14,7 @@ export class CombatViewComponent implements OnInit {
 
   displayedColumns: string[] = ['initiative', 'name', 'armor', 'health'];
   dataSource: MatTableDataSource<Combatant>;
-  private activeCombatant: Combatant;
+  activeCombatant: Combatant;
   private activeIndex = 0;
   private highestIndex;
 
